@@ -11,11 +11,17 @@ CRUD/CIDA com Java utilizando o gerenciador de dependências Apache Maven
 ### Windows, Linux e MacOS
 Primeiros passos
 ### Aquisição da IDE e do Servidor
+- Baixe o [Java 8](https://www.java.com/pt_BR/download/).
 - Baixe o [Eclipse IDE](https://www.eclipse.org/downloads/).
 - Baixe o [Tomcat 8.5](https://tomcat.apache.org/download-80.cgi).
 - Baixe o SQL (Você pode baixar o [MySQL Workbench](https://dev.mysql.com/downloads/workbench/), ou qualquer outro serviço SQL).
 - Baixe o [repositório](https://github.com/gustavottc/CRUD-JAVA-WEB/archive/master.zip) da aplicação.
 ### Configuração e instalação
+- Java
+  - Instalação:
+    - Instale a aplicação normalmente
+  - Configuração:
+    - Não ha necessidade
 - Eclipse
   - Instalação:
     - Instale a aplicação normalmente
