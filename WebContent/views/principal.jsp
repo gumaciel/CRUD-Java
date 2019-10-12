@@ -30,7 +30,13 @@
 	<tr>
 		<td> <a href= "usuario?opcao=listar">Listar todos os Usuários</a></td>
 	</tr>
+
 </table>
+<font color="red">
+	<c:out value="${sessionScope.msgAviso}"/>
+</font>
+
+<c:set var="msgAviso" value="" scope="session" />	
 
 
 </body>

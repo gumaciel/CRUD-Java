@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import gustavo.com.github.dao.TelefoneTipoDAO;
 import gustavo.com.github.dao.UsuarioDAO;
@@ -144,7 +145,8 @@ public class UsuarioControlador extends HttpServlet {
 				usuarioTelefoneDAO.deletarTodosOsNumerosDoUsuario(id_usuario);
 				System.out.println("Exclusão de todos os números do id " + request.getParameter("id_usuario") + " realizado com sucesso!");
 
-				
+				HttpSession session=request.getSession();  
+				session.setAttribute("msgAviso", "Exclusão realizada com sucesso!");
 				RequestDispatcher requestDispatcher = request.getRequestDispatcher("views/principal.jsp");
 				requestDispatcher.forward(request, response);
 
@@ -200,9 +202,16 @@ public class UsuarioControlador extends HttpServlet {
 				}
 				
 				System.out.println("Cadastro realizado com sucesso!");
-				RequestDispatcher requestDispatcher = request.getRequestDispatcher("views/principal.jsp");
-				requestDispatcher.forward(request, response);
-
+				HttpSession session=request.getSession();  
+				session.setAttribute("msgAviso", "Cadastro realizado com sucesso!");
+				if(session.getAttribute("usuario") == null || session.getAttribute("usuario") == ""){
+					RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");					
+					requestDispatcher.forward(request, response);
+				}
+				else {
+					RequestDispatcher requestDispatcher = request.getRequestDispatcher("views/principal.jsp");					
+					requestDispatcher.forward(request, response);					
+				}
 			}catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -250,7 +259,9 @@ public class UsuarioControlador extends HttpServlet {
 			
 				}
 
-				
+				HttpSession session=request.getSession();  
+				session.setAttribute("msgAviso", "Edição realizada com sucesso!");
+
 				RequestDispatcher requestDispatcher = request.getRequestDispatcher("views/principal.jsp");
 				requestDispatcher.forward(request, response);
 

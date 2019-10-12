@@ -18,8 +18,8 @@ public class Conexao {
 			dataSource.setPassword("");
 			dataSource.setUrl("jdbc:mysql://localhost:3306/crud_java?useTimezone=true&serverTimezone=UTC&useSSL=false&rewriteBatchedStatements=true&relaxAutoCommit=true");
 			dataSource.setInitialSize(100);
-			dataSource.setMaxIdle(40);
-			dataSource.setMaxTotal(50);
+			dataSource.setMaxIdle(60);
+			dataSource.setMaxTotal(80);
 			dataSource.setMaxWaitMillis(5000);
 		}
 		

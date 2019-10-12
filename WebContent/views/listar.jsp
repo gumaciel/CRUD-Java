@@ -32,7 +32,7 @@
 		<td>Senha: </td>
 		<td>DDD: </td>
 		<td>Número: </td>
-		<td>TipoTelefone: </td>
+		<td>Tipo de Telefone: </td>
 		<td>Ação: </td>
 	</tr>
 	

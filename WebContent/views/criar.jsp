@@ -6,15 +6,12 @@
 <head>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script> 
 <script src="js/validarFormCadastroUsuario.js" type="text/javascript"></script>
-<c:if test="${empty sessionScope['usuario']}">
-	<c:set var="msgAviso" value="Você precisa entrar no sistema para ter acesso a esse conteúdo" scope="session" />
-	<c:redirect url="index.jsp" />
-</c:if>
 
 <meta charset="UTF-8">
 <title>Adicionar um Usuário</title>
 </head>
 <body>
+<c:if test="${!empty sessionScope['usuario']}">
  <table>
  	<tr>
  		<td>
@@ -22,6 +19,7 @@
  		</td>
  	</tr>
  </table>
+</c:if>
 <h1>Adicionar um Usuário</h1>
 	<form id="form_usuario" action="usuario" method="post">
 		<input type="hidden" name="opcao" value="guardar">
