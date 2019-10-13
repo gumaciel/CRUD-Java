@@ -30,5 +30,4 @@ public class TelefoneTipoDAOTest {
 	public void testListarTelefoneTipo() {
 		fail("Not yet implemented");
 	}
-
 }

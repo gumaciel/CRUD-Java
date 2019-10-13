@@ -44,7 +44,7 @@ Primeiros passos
     
 ### Uso da aplicação
 Com o Eclipse rodando e o projeto selecionado, espere que o Maven baixe todas as dependências do projeto, logo após, verifique se o SQL está rodando na porta 3306
-- Baixe e execute o Script SQL: [crud_java.sql](https://github.com/gustavottc/CRUD-JAVA-WEB/blob/master/crud_java.sql)
+- Baixe e execute o Script SQL: [crud_java.sql](https://github.com/gustavottc/CRUD-Java/blob/master/crud_java.sql)
 - Clique com o botão direito em cima do nome do projeto e clique em:
   - "Run As"
     - "Run on Server"
