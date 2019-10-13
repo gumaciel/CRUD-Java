@@ -15,7 +15,7 @@ public class Conexao {
 			dataSource = new BasicDataSource();
 			dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
 			dataSource.setUsername("root");
-			dataSource.setPassword("Dal3qdal3!");
+			dataSource.setPassword("");
 			dataSource.setUrl("jdbc:mysql://localhost:3306/crud_java?useTimezone=true&serverTimezone=UTC&useSSL=false&rewriteBatchedStatements=true&relaxAutoCommit=true");	
 			dataSource.setInitialSize(50);
 			dataSource.setMaxIdle(100);
