@@ -50,10 +50,12 @@ public class UsuarioDAO {
 			
 			connection.commit();
 			statement.close();
-			connection.close();
 		} catch (SQLException e) {
 			connection.rollback();
 			e.printStackTrace();
+		}finally{
+			System.out.println("fechou");
+			connection.close();
 		}
 		
 		return id_gerado;
@@ -78,13 +80,15 @@ public class UsuarioDAO {
 			estadoOperacao = statement.executeUpdate() > 0 ;
 			connection.commit();
 			statement.close();
-			connection.close();
 			
 			
 		}
 		catch (SQLException e) {
 			connection.rollback();
 			e.printStackTrace();
+		}finally{
+			System.out.println("fechou");
+			connection.close();
 		}
 		
 		
@@ -107,13 +111,15 @@ public class UsuarioDAO {
 			estadoOperacao = statement.executeUpdate() > 0 ;
 			connection.commit();
 			statement.close();
-			connection.close();
 			
 			
 		}
 		catch (SQLException e) {
 			connection.rollback();
 			e.printStackTrace();
+		}finally{
+			System.out.println("fechou");
+			connection.close();
 		}
 		
 		
@@ -145,10 +151,12 @@ public class UsuarioDAO {
 				
 			}
 			statement.close();
-			connection.close();
 			
 		}catch (SQLException e) {
 			e.printStackTrace();
+		}finally{
+			System.out.println("fechou");
+			connection.close();
 		}
 		
 		return listaUsuarios;
@@ -181,6 +189,9 @@ public class UsuarioDAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}finally{
+			System.out.println("fechou");
+			connection.close();
 		}
 
 		return u;
@@ -211,6 +222,9 @@ public class UsuarioDAO {
 			resultSet.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}finally{
+			System.out.println("fechou");
+			connection.close();
 		}
 
 		return usuario;

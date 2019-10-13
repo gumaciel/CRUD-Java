@@ -40,6 +40,9 @@ public class TelefoneTipoDAO {
 			
 		}catch (SQLException e) {
 			e.printStackTrace();
+		}finally{
+			System.out.println("fechou");
+			connection.close();
 		}
 		
 		return listaProdutos;
@@ -73,6 +76,9 @@ public class TelefoneTipoDAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}finally{
+			System.out.println("fechou");
+			connection.close();
 		}
 
 		return arrayTelefoneTipo;

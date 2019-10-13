@@ -15,11 +15,11 @@ public class Conexao {
 			dataSource = new BasicDataSource();
 			dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
 			dataSource.setUsername("root");
-			dataSource.setPassword("");
-			dataSource.setUrl("jdbc:mysql://localhost:3306/crud_java?useTimezone=true&serverTimezone=UTC&useSSL=false&rewriteBatchedStatements=true&relaxAutoCommit=true");
-			dataSource.setInitialSize(100);
-			dataSource.setMaxIdle(60);
-			dataSource.setMaxTotal(80);
+			dataSource.setPassword("Dal3qdal3!");
+			dataSource.setUrl("jdbc:mysql://localhost:3306/crud_java?useTimezone=true&serverTimezone=UTC&useSSL=false&rewriteBatchedStatements=true&relaxAutoCommit=true");	
+			dataSource.setInitialSize(50);
+			dataSource.setMaxIdle(100);
+			dataSource.setMaxTotal(1000);
 			dataSource.setMaxWaitMillis(5000);
 		}
 		
@@ -27,7 +27,6 @@ public class Conexao {
 	
 	}
 	public static Connection getConnection() throws SQLException {
-		
 		return getDataSource().getConnection();
 		
 	}

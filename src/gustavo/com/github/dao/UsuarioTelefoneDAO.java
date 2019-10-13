@@ -36,10 +36,12 @@ public class UsuarioTelefoneDAO {
 			
 			connection.commit();
 			statement.close();
-			connection.close();
 		} catch (SQLException e) {
 			connection.rollback();
 			e.printStackTrace();
+		}finally{
+			System.out.println("fechou");
+			connection.close();
 		}
 		
 		return estadoOperacao;
@@ -75,6 +77,9 @@ public class UsuarioTelefoneDAO {
 			resultSet.close();
 		}catch (SQLException e) {
 			e.printStackTrace();
+		}finally{
+			System.out.println("fechou");
+			connection.close();
 		}
 
 		return arrayUsuarioTelefone;
@@ -95,13 +100,15 @@ public class UsuarioTelefoneDAO {
 			estadoOperacao = statement.executeUpdate() > 0 ;
 			connection.commit();
 			statement.close();
-			connection.close();
 			
 			
 		}
 		catch (SQLException e) {
 			connection.rollback();
 			e.printStackTrace();
+		}finally{
+			System.out.println("fechou");
+			connection.close();
 		}
 		
 		
