@@ -5,28 +5,44 @@
 
 <html>
 <head>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script> 
-<script src="js/validarFormEditarUsuario.js" type="text/javascript"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script> 
+	<script src="js/validarFormEditarUsuario.js" type="text/javascript"></script>
 
-<c:if test="${empty sessionScope['usuario']}">
-	<c:set var="msgAviso" value="Você precisa entrar no sistema para ter acesso a esse conteúdo" scope="session" />
-	<c:redirect url="index.jsp" />
-</c:if>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-<script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-<meta charset="UTF-8">
-<title>Editar Produto</title>
+
+	
+	<c:if test="${empty sessionScope['usuario']}">
+		<c:set var="msgAviso" value="Você precisa entrar no sistema para ter acesso a esse conteúdo" scope="session" />
+		<c:redirect url="index.jsp" />
+	</c:if>
+	
+	<meta charset="UTF-8">
+	<title>Editar Produto</title>
+	<script type="text/javascript">
+		  $(document).ready(function(){
+		    $('select').formSelect();
+		  });
+		  $(document).ready(function() {
+		    $('select').material_select();
+		  });
+  </script>
+	
 </head>
 <body>
- <table>
- 	<tr>
- 		<td>
- 			Bem vindo <c:out value="${sessionScope.usuario.nome}"/>, deseja fazer <a href="logout">Logout?</a>
- 		</td>
- 	</tr>
- </table>
+<div class="container">
 
-<h1>Editar Produto</h1>
+	<table class="orange lighten-4">
+	 	<tr>
+	 		<td>
+	 			Bem vindo <c:out value="${sessionScope.usuario.nome}"/>, deseja fazer <a href="logout">Logout?</a>
+	 		</td>
+	 	</tr>
+	</table>
+
+	<h1>Editar Produto</h1>
 	<form id="form_usuario" action="usuario" method="post">
 	<c:set var="usuario" value="${usuario}"></c:set>
 		<input type="hidden" name="opcao" value="editar">
@@ -47,22 +63,23 @@
 			<tr>
 				<td>Telefone 01:</td>
 				<td>
-					<select name="id_telefone_tipo01">
-						<option value="">
-							Selecione...
-						</option>
-							<c:forEach var="listaTiposTelefone" items="${listaTiposTelefone}">
-							<option value="<c:out value="${listaTiposTelefone.id_telefone_tipo}"></c:out>" 
-								<c:forEach var="arrayUsuarioTelefone" begin="0" end="0" items="${arrayUsuarioTelefone}">
-									<c:if test="${arrayUsuarioTelefone.id_telefone_tipo == listaTiposTelefone.id_telefone_tipo}"> 
-										<c:out value = "selected='selected'"> </c:out>
-									</c:if>
-								</c:forEach>>
-								<c:out value="${listaTiposTelefone.nome}"></c:out>
+					<div class="input-field col s12">					
+						<select name="id_telefone_tipo01">
+							<option value="">
+								Selecione...
 							</option>
-							</c:forEach>
-	
-					</select>
+								<c:forEach var="listaTiposTelefone" items="${listaTiposTelefone}">
+								<option value="<c:out value="${listaTiposTelefone.id_telefone_tipo}"></c:out>" 
+									<c:forEach var="arrayUsuarioTelefone" begin="0" end="0" items="${arrayUsuarioTelefone}">
+										<c:if test="${arrayUsuarioTelefone.id_telefone_tipo == listaTiposTelefone.id_telefone_tipo}"> 
+											<c:out value = "selected='selected'"> </c:out>
+										</c:if>
+									</c:forEach>>
+									<c:out value="${listaTiposTelefone.nome}"></c:out>
+								</option>
+								</c:forEach>
+						</select>
+					</div>
 					<input type="text" name="ddd01" maxlength="3" size="5" value =<c:forEach var="arrayUsuarioTelefone" begin="0" end="0" items="${arrayUsuarioTelefone}">
 						<c:out value="${arrayUsuarioTelefone.ddd}"></c:out>
 					</c:forEach>>
@@ -101,10 +118,7 @@
 			
 		</table>
 		<input type="submit" value="Guardar">
-	</form>
+		</form>
+	</div>
 </body>
-<script>
-	//alert($("input[name=nome]").val());
-
-</script>
 </html>

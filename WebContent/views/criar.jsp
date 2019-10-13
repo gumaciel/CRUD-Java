@@ -4,23 +4,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script> 
-<script src="js/validarFormCadastroUsuario.js" type="text/javascript"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script> 
+	<script src="js/validarFormCadastroUsuario.js" type="text/javascript"></script>
 
-<meta charset="UTF-8">
-<title>Adicionar um Usuário</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		
+	<meta charset="UTF-8">
+	<title>Adicionar um Usuário</title>
+	<script type="text/javascript">
+		  $(document).ready(function(){
+		    $('select').formSelect();
+		  });
+	</script>
+
 </head>
 <body>
+<div class="container">
+
 <c:if test="${!empty sessionScope['usuario']}">
- <table>
- 	<tr>
+<table class="orange lighten-4">
+	<tr>
  		<td>
- 			Bem vindo <c:out value="${sessionScope.usuario.nome}"/>, deseja fazer <a href="logout">Logout?</a>
- 		</td>
- 	</tr>
- </table>
+			Bem vindo <c:out value="${sessionScope.usuario.nome}"/>, deseja fazer <a href="logout">Logout?</a>
+		</td>
+	</tr>
+</table>
 </c:if>
-<h1>Adicionar um Usuário</h1>
+	<h1>Adicionar um Usuário</h1>
 	<form id="form_usuario" action="usuario" method="post">
 		<input type="hidden" name="opcao" value="guardar">
 		<table border="1">
@@ -39,16 +51,18 @@
 			<tr>
 				<td>Telefone 01:</td>
 				<td>
-					<select name="id_telefone_tipo01">
-						<option value="">
-							Selecione...
-						</option>
-						<c:forEach var="telefoneTipo" items="${lista}">
-						<option value="<c:out value="${telefoneTipo.id_telefone_tipo}"></c:out>">
-							<c:out value="${telefoneTipo.nome}"></c:out>
-						</option>
-						</c:forEach>						
-					</select>
+					<div class="input-field col s12">
+						<select name="id_telefone_tipo01">
+							<option value="">
+								Selecione...
+							</option>
+							<c:forEach var="telefoneTipo" items="${lista}">
+							<option value="<c:out value="${telefoneTipo.id_telefone_tipo}"></c:out>">
+								<c:out value="${telefoneTipo.nome}"></c:out>
+							</option>
+							</c:forEach>						
+						</select>
+					</div>
 					<input type="text" name="ddd01" maxlength="3" size="5">				
 					<input type="text" name="telefone01" maxlength="9" size="13">				
 				</td>
@@ -56,16 +70,18 @@
 			<tr>
 				<td>Telefone 02:</td>
 				<td>
-					<select name="id_telefone_tipo02">
-						<option value="">
-							Selecione...
-						</option>
-						<c:forEach var="telefoneTipo" items="${lista}">
-						<option value="<c:out value="${telefoneTipo.id_telefone_tipo}"></c:out>">
-							<c:out value="${telefoneTipo.nome}"></c:out>
-						</option>
-						</c:forEach>						
-					</select>
+					<div class="input-field col s12">
+						<select name="id_telefone_tipo02">
+							<option value="">
+								Selecione...
+							</option>
+							<c:forEach var="telefoneTipo" items="${lista}">
+							<option value="<c:out value="${telefoneTipo.id_telefone_tipo}"></c:out>">
+								<c:out value="${telefoneTipo.nome}"></c:out>
+							</option>
+							</c:forEach>						
+						</select>
+					</div>
 					<input type="text" name="ddd02" maxlength="3" size="5">				
 					<input type="text" name="telefone02" maxlength="9" size="13">				
 				</td>
@@ -84,6 +100,6 @@
 		</table>
 		<input type="submit" value="Guardar">
 	</form>
-	
+</div>
 </body>
 </html>
