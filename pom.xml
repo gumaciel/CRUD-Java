@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>CIDAJava</groupId>
   <artifactId>CIDAJava</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.2-SNAPSHOT</version>
   <packaging>war</packaging>
   <build>
     <sourceDirectory>src</sourceDirectory>
@@ -24,6 +24,12 @@
       </plugin>
     </plugins>
   </build>
+  	<properties>
+		<maven.compiler.target>11</maven.compiler.target>
+		<maven.compiler.source>11</maven.compiler.source>
+		<junit.jupiter.version>5.4.0</junit.jupiter.version>
+	</properties>
+  
   <dependencies>
   	<dependency>
 		<groupId>javax.servlet</groupId>
@@ -46,6 +52,23 @@
 		<artifactId>jstl</artifactId>
 		<version>1.2</version>
 	</dependency>
-  </dependencies>
+<dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.11</version>
+        <scope>teste</scope>
+    </dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>${junit.jupiter.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>${junit.jupiter.version}</version>
+			<scope>test</scope>
+		</dependency>  </dependencies>
  
 </project>
