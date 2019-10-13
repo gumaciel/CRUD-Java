@@ -1,11 +1,7 @@
--- phpMyAdmin SQL Dump
--- version 4.8.4
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1:3306
--- Generation Time: 12-Out-2019 às 22:07
--- Versão do servidor: 5.7.24
--- versão do PHP: 7.2.14
+DROP DATABASE IF EXISTS crud_java;
+CREATE DATABASE IF NOT EXISTS crud_java;
+
+USE crud_java;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
