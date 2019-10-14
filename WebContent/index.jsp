@@ -54,7 +54,7 @@
 		<c:if test="${!empty sessionScope.msgAviso }">
 			<tr>
 				<td class="center-align">
-					<font size="7" color="<c:out value="${sessionScope.msgAvisoCor}"/>">
+					<font size="6" color="<c:out value="${sessionScope.msgAvisoCor}"/>">
 						<c:out value="${sessionScope.msgAviso}"/>
 					</font>
 				</td>

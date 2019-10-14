@@ -60,9 +60,14 @@
 					<c:out value="${arrayTelefoneTipo.nome}"></c:out><br>
 				</c:forEach></td>
 				<td> <a class="waves-effect waves-light btn" href="usuario?opcao=deletar&id_usuario=<c:out value="${arrayUsuario.id_usuario}"></c:out>"> Deletar </a> </td>
-				
 			</tr>
 		</c:forEach>
+		<tr>
+			<td class="left-align">
+				<a class="waves-effect waves-light btn" href= "usuario?opcao=voltar&view=principal.jsp"><i class="material-icons right">arrow_back</i>Voltar</a>
+			</td>
+		</tr>
+		
 	</table>
 </div>
 </body>
