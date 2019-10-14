@@ -59,14 +59,16 @@ public class LoginControlador extends HttpServlet {
 				if(usuario.getId_usuario() != 0) {
 					//conseguiu fazer login
 					session.setAttribute("usuario", usuario);  
-					session.setAttribute("msgAviso", "");
+					session.setAttribute("msgAviso", "Login efetudo com sucesso!");
+					session.setAttribute("msgAvisoCor", "green");
 					RequestDispatcher requestDispatcher = request.getRequestDispatcher("views/principal.jsp");
 					requestDispatcher.forward(request, response);
 
 				}
 				else {
 					//não conseguiu fazer login
-					session.setAttribute("msgAviso", "E-mail ou senha inválidos");
+					session.setAttribute("msgAviso", "E-mail e/ou senha inválido.");
+					session.setAttribute("msgAvisoCor", "red");
 					RequestDispatcher requestDispatcher = request.getRequestDispatcher("/index.jsp");
 					requestDispatcher.forward(request, response);
 				}
