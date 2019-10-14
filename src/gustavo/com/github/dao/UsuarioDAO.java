@@ -136,7 +136,7 @@ public class UsuarioDAO {
 		connection = obterConexao();
 
 		try {
-			sql = "SELECT * FROM usuario";
+			sql = "SELECT * FROM usuario ORDER BY nome ASC";
 			statement = connection.prepareStatement(sql);
 			resultSet = statement.executeQuery(sql);
 			
