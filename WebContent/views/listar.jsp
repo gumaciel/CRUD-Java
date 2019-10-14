@@ -23,14 +23,16 @@
 	<table class="orange lighten-4">
 		<tr>
 			<td>
-				Bem vindo <c:out value="${sessionScope.usuario.nome}"/>, deseja fazer <a href="logout">Logout?</a>
+				<font size="3">
+					Bem vindo <c:out value="${sessionScope.usuario.nome}"/>, deseja fazer <a href="logout">Logout?</a>
+				</font>
 			</td>
 		</tr>
 	</table>
 	
 	<h1>Listar Usuarios</h1>
 	
-	<table border="1">
+	<table border="1" class="striped">
 		<tr>
 			<td>ID, ação:</td>
 			<td>Nome: </td>
@@ -44,7 +46,7 @@
 		
 		<c:forEach var="arrayUsuario" items="${arrayUsuario}" varStatus="loopUsuario">
 			<tr>
-				<td> <a href="usuario?opcao=meditar&id_usuario=<c:out value="${arrayUsuario.id_usuario}"></c:out>"> <c:out value="${arrayUsuario.id_usuario}"></c:out>, Editar </a> </td>
+				<td> <a class="waves-effect waves-light btn" href="usuario?opcao=meditar&id_usuario=<c:out value="${arrayUsuario.id_usuario}"></c:out>"> <c:out value="${arrayUsuario.id_usuario}"></c:out>, Editar </a> </td>
 				<td><c:out value="${arrayUsuario.nome}"></c:out></td>
 				<td><c:out value="${arrayUsuario.email}"></c:out></td>
 				<td><c:out value="${arrayUsuario.senha}"></c:out></td>
@@ -57,7 +59,7 @@
 				<td><c:forEach var="arrayTelefoneTipo" items="${arrayTelefoneTipo[loopUsuario.index]}">
 					<c:out value="${arrayTelefoneTipo.nome}"></c:out><br>
 				</c:forEach></td>
-				<td> <a href="usuario?opcao=deletar&id_usuario=<c:out value="${arrayUsuario.id_usuario}"></c:out>"> Deletar </a> </td>
+				<td> <a class="waves-effect waves-light btn" href="usuario?opcao=deletar&id_usuario=<c:out value="${arrayUsuario.id_usuario}"></c:out>"> Deletar </a> </td>
 				
 			</tr>
 		</c:forEach>

@@ -147,6 +147,7 @@ public class UsuarioControlador extends HttpServlet {
 
 				HttpSession session=request.getSession();  
 				session.setAttribute("msgAviso", "Exclusão realizada com sucesso!");
+				session.setAttribute("msgAvisoCor", "green");
 				RequestDispatcher requestDispatcher = request.getRequestDispatcher("views/principal.jsp");
 				requestDispatcher.forward(request, response);
 
@@ -204,6 +205,7 @@ public class UsuarioControlador extends HttpServlet {
 				System.out.println("Cadastro realizado com sucesso!");
 				HttpSession session=request.getSession();  
 				session.setAttribute("msgAviso", "Cadastro realizado com sucesso!");
+				session.setAttribute("msgAvisoCor", "green");
 				if(session.getAttribute("usuario") == null || session.getAttribute("usuario") == ""){
 					RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");					
 					requestDispatcher.forward(request, response);
@@ -261,6 +263,7 @@ public class UsuarioControlador extends HttpServlet {
 
 				HttpSession session=request.getSession();  
 				session.setAttribute("msgAviso", "Edição realizada com sucesso!");
+				session.setAttribute("msgAvisoCor", "green");
 
 				RequestDispatcher requestDispatcher = request.getRequestDispatcher("views/principal.jsp");
 				requestDispatcher.forward(request, response);
