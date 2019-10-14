@@ -1,3 +1,5 @@
+<p align="left"><img src="https://github.com/gustavottc/CRUD-Java/blob/master/logo.png" width="250" height="250"></p>
+
 # CRUD-JAVA-WEB
 CRUD/CIDA com Java utilizando o gerenciador de dependências Apache Maven 
 
@@ -6,6 +8,8 @@ CRUD/CIDA com Java utilizando o gerenciador de dependências Apache Maven
 - JSP
 - SQL
 - JDBC
+- JUnit
+- Materialize
 
 ## Como usar:
 ### Windows, Linux e MacOS
