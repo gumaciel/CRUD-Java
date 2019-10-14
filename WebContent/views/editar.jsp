@@ -37,7 +37,9 @@
 	<table class="orange lighten-4">
 	 	<tr>
 	 		<td>
-	 			Bem vindo <c:out value="${sessionScope.usuario.nome}"/>, deseja fazer <a href="logout">Logout?</a>
+				<font size="3">
+		 			Bem vindo <c:out value="${sessionScope.usuario.nome}"/>, deseja fazer <a href="logout">Logout?</a>
+	 			</font>
 	 		</td>
 	 	</tr>
 	</table>
@@ -49,75 +51,125 @@
 		<input type="hidden" name="id_usuario" value="${usuario.id_usuario}">
 		<table border="1">
 			<tr>
-				<td style="color:red;">Nome:</td>
-				<td><input type="text" name="nome" campo-obrigatorio size="50" value="${usuario.nome}"></td>
-			</tr>
-			<tr>
-				<td style="color:red;">Email:</td>
-				<td><input type="email" name="email" campo-obrigatorio size="50" value="${usuario.email}"></td>
-			</tr>
-			<tr>
-				<td style="color:red;">Senha:</td>
-				<td><input type="password" name="senha" campo-obrigatorio size="50" value="${usuario.senha}"></td>
-			</tr>
-			<tr>
-				<td>Telefone 01:</td>
 				<td>
-					<div class="input-field col s12">					
+					<div class="input-field col s6">
+						<i class="material-icons prefix">account_box</i>
+						<input id="nome_prefix" type="text" class="validate" campo-obrigatorio size="30" name="nome" value="${usuario.nome}">
+						<label for="nome_prefix">Nome <font color="red">(Obrigatório)</font></label>
+			        </div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="input-field col s6">
+						<i class="material-icons prefix">email</i>
+						<input id="email_prefix" type="email" class="validate"  name="email" value="${usuario.email}">
+						<label for="email_prefix">E-mail <font color="red">(Obrigatório)</font></label>
+			        </div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="input-field col s6">
+						<i class="material-icons prefix">security</i>
+						<input id="senha_prefix" type="password" class="validate" name="senha" value="${usuario.senha}">
+						<label for="senha_prefix">Senha <font color="red">(Obrigatório)</font></label>
+			        </div>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<div class="input-field col s12">
+						<div class="left-align">
+							<i class="material-icons prefix">phone</i>
+							<label>Telefone 01</label>
+						</div>
+					
 						<select name="id_telefone_tipo01">
-							<option value="">
-								Selecione...
-							</option>
+							<option value="">Selecione...</option>
 								<c:forEach var="listaTiposTelefone" items="${listaTiposTelefone}">
 								<option value="<c:out value="${listaTiposTelefone.id_telefone_tipo}"></c:out>" 
 									<c:forEach var="arrayUsuarioTelefone" begin="0" end="0" items="${arrayUsuarioTelefone}">
 										<c:if test="${arrayUsuarioTelefone.id_telefone_tipo == listaTiposTelefone.id_telefone_tipo}"> 
 											<c:out value = "selected='selected'"> </c:out>
 										</c:if>
-									</c:forEach>>
-									<c:out value="${listaTiposTelefone.nome}"></c:out>
+									</c:forEach>><c:out value="${listaTiposTelefone.nome}"></c:out>
 								</option>
 								</c:forEach>
 						</select>
+						<div class="input-field col s1">
+							<input id="ddd01_prefix" type="text" name="ddd01" maxlength="3" size="5" value =<c:forEach var="arrayUsuarioTelefone" begin="0" end="0" items="${arrayUsuarioTelefone}">
+								<c:out value="${arrayUsuarioTelefone.ddd}"></c:out>
+							</c:forEach>>
+							<label for="ddd01_prefix">DDD </label>
+				        </div>
+						<div class="input-field col s1">
+							<input id="numero01_prefix" type="text" name="telefone01" maxlength="9" size="13"value =<c:forEach var="arrayUsuarioTelefone" begin="0" end="0" items="${arrayUsuarioTelefone}">
+								<c:out value="${arrayUsuarioTelefone.numero_telefone}"></c:out>
+							</c:forEach>>
+							<label for="numero01_prefix">Número de telefone </label>
+				        </div>
 					</div>
-					<input type="text" name="ddd01" maxlength="3" size="5" value =<c:forEach var="arrayUsuarioTelefone" begin="0" end="0" items="${arrayUsuarioTelefone}">
-						<c:out value="${arrayUsuarioTelefone.ddd}"></c:out>
-					</c:forEach>>
-					<input type="text" name="telefone01" maxlength="9" size="13" value =<c:forEach var="arrayUsuarioTelefone" begin="0" end="0" items="${arrayUsuarioTelefone}">
-						<c:out value="${arrayUsuarioTelefone.numero_telefone}"></c:out>
-					</c:forEach>>
+
 				</td>
 			</tr>
 			<tr>
-				<td>Telefone 02:</td>
 				<td>
-					<select name="id_telefone_tipo02">
-						<option value="">
-							Selecione...
-						</option>
-						<c:forEach var="listaTiposTelefone" items="${listaTiposTelefone}">
-						<option value="<c:out value="${listaTiposTelefone.id_telefone_tipo}"></c:out>" 
-							<c:forEach var="arrayUsuarioTelefone" begin="1" end="1" items="${arrayUsuarioTelefone}">
-								<c:if test="${arrayUsuarioTelefone.id_telefone_tipo == listaTiposTelefone.id_telefone_tipo}"> 
-									<c:out value = "selected"> </c:out>
-								</c:if>
+					<div class="input-field col s12">
+						<div class="left-align">
+							<i class="material-icons prefix">phone</i>
+							<label>Telefone 02</label>
+						</div>
+					
+						<select name="id_telefone_tipo02">
+							<option value="">Selecione...</option>
+								<c:forEach var="listaTiposTelefone" items="${listaTiposTelefone}">
+								<option value="<c:out value="${listaTiposTelefone.id_telefone_tipo}"></c:out>" 
+									<c:forEach var="arrayUsuarioTelefone" begin="1" end="1" items="${arrayUsuarioTelefone}">
+										<c:if test="${arrayUsuarioTelefone.id_telefone_tipo == listaTiposTelefone.id_telefone_tipo}"> 
+											<c:out value = "selected='selected'"> </c:out>
+										</c:if>
+									</c:forEach>><c:out value="${listaTiposTelefone.nome}"></c:out>
+								</option>
+								</c:forEach>
+						</select>
+						<div class="input-field col s1">
+							<input id="ddd02_prefix" type="text" name="ddd02" maxlength="3" size="5" value =<c:forEach var="arrayUsuarioTelefone" begin="1" end="1" items="${arrayUsuarioTelefone}">
+								<c:out value="${arrayUsuarioTelefone.ddd}"></c:out>
 							</c:forEach>>
-							<c:out value="${listaTiposTelefone.nome}"></c:out>
-						</option>
-						</c:forEach>
-	
-					</select>
-					<input type="text" name="ddd02" maxlength="3" size="5" value =<c:forEach var="arrayUsuarioTelefone" begin="1" end="1" items="${arrayUsuarioTelefone}">
-						<c:out value="${arrayUsuarioTelefone.ddd}"></c:out>
-					</c:forEach>>
-					<input type="text" name="telefone02" maxlength="9" size="13" value =<c:forEach var="arrayUsuarioTelefone" begin="1" end="1" items="${arrayUsuarioTelefone}">
-						<c:out value="${arrayUsuarioTelefone.numero_telefone}"></c:out>
-					</c:forEach>>
+							<label for="ddd02_prefix">DDD </label>
+				        </div>
+						<div class="input-field col s1">
+							<input id="numero02_prefix" type="text" name="telefone02" maxlength="9" size="13"value =<c:forEach var="arrayUsuarioTelefone" begin="1" end="1" items="${arrayUsuarioTelefone}">
+								<c:out value="${arrayUsuarioTelefone.numero_telefone}"></c:out>
+							</c:forEach>>
+							<label for="numero02_prefix">Número de telefone </label>
+				        </div>
+					</div>
+
 				</td>
 			</tr>
 			
 		</table>
-		<input type="submit" value="Guardar">
+		<table>
+			<tr>
+				<td class="center-align">
+					<font size="5">
+						Tudo que estiver em
+						<font color="red">
+							 vermelho 
+						</font>
+					é obrigatório.
+					</font>
+				</td>
+			</tr>
+		</table>
+		<div class="center-align">
+		  <button class="btn-large waves-effect waves-light" type="submit" value="Guardar">Editar
+		    <i class="material-icons right">edit</i>
+		  </button>
+		</div>
 		</form>
 	</div>
 </body>

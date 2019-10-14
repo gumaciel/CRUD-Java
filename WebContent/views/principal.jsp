@@ -22,7 +22,9 @@
 	<table class="orange lighten-4">
 	 	<tr>
 	 		<td>
-	 			Bem vindo <c:out value="${sessionScope.usuario.nome}"/>, deseja fazer <a href="logout">Logout?</a>
+				<font size="3">
+		 			Bem vindo <c:out value="${sessionScope.usuario.nome}"/>, deseja fazer <a href="logout">Logout?</a>
+	 			</font>
 	 		</td>
 	 	</tr>
 	</table>
@@ -31,16 +33,22 @@
 	
 	<table border="1">
 		<tr>
-			<td> <a href= "usuario?opcao=criar">Registrar um Usuário</a></td>
+			<td> <a class="waves-effect waves-light btn" href= "usuario?opcao=criar">Registrar um Usuário</a></td>
 		</tr>
 		<tr>
-			<td> <a href= "usuario?opcao=listar">Listar todos os Usuários</a></td>
+			<td> <a class="waves-effect waves-light btn" href= "usuario?opcao=listar">Listar todos os Usuários</a></td>
 		</tr>
 	
 	</table>
-	<font color="red">
-		<c:out value="${sessionScope.msgAviso}"/>
-	</font>
+	<c:if test="${!empty sessionScope.msgAviso }">
+		<tr>
+			<td class="center-align">
+				<font size="5" color="<c:out value="${sessionScope.msgAvisoCor}"/>">
+					<c:out value="${sessionScope.msgAviso}"/>
+				</font>
+			</td>
+		</tr>
+	</c:if>
 </div>
 <c:set var="msgAviso" value="" scope="session" />	
 

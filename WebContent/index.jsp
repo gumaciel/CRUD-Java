@@ -24,7 +24,7 @@
 				<td>
 					<div class="input-field col s6">
 						<i class="material-icons prefix">email</i>
-						<input id="email_prefix" type="email" class="validate" name="email">
+						<input id="email_prefix" type="email" class="validate"  name="email">
 						<label for="email_prefix">E-mail</label>
 			        </div>
 				</td>
@@ -36,7 +36,6 @@
 						<input id="senha_prefix" type="password" class="validate" name="senha">
 						<label for="senha_prefix">Senha</label>
 			        </div>
-				
 				</td>
 			</tr>
 		</table>
