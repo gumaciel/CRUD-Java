@@ -155,7 +155,21 @@ public class UsuarioControlador extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		} else if(opcao.equals("voltar")) {
+			String url = "";
+			HttpSession session = request.getSession();
+			if(session.getAttribute("usuario") == null || session.getAttribute("usuario") == "") {
+				url = "index.jsp";
+			}
+			else {
+				String view = request.getParameter("view");
+
+				url = "views/"+view;
+			}
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher(url);
+			requestDispatcher.forward(request, response);
 		}
+
 		
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}

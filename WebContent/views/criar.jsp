@@ -132,6 +132,18 @@
 		    <i class="material-icons right">add_circle_outline</i>
 		  </button>
 		</div>
+		<br>
+		<c:if test="${!empty sessionScope['usuario']}">
+			<div class="center-align">
+				<a class="waves-effect waves-light btn-large" href= "usuario?opcao=voltar&view=principal.jsp"><i class="material-icons right">arrow_back</i>Voltar</a>
+			</div>
+		</c:if>
+		<c:if test="${empty sessionScope['usuario']}">
+			<div class="center-align">
+				<a class="waves-effect waves-light btn-large" href= "usuario?opcao=voltar"><i class="material-icons right">arrow_back</i>Voltar</a>
+			</div>
+		</c:if>
+		<br>
 	</form>
 </div>
 </body>
